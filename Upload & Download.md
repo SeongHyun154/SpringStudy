@@ -112,7 +112,7 @@ public class FileUpDownloadController {
 		return "file/upload";
 	}
 }
-
+```
 
 ---
 
@@ -169,6 +169,7 @@ DTO를 통해 메타데이터(예: `category` 또는 `price`)와 파일을 함�
 	
 </body>
 </html>
+```
 ---
 
 ## 3. HTML 파일 업로드 폼
@@ -206,6 +207,7 @@ public class FileDto {
 	private int price;
 	MultipartFile [] files;
 }
+```
 ---
 
 ## 전체 흐름 요약
