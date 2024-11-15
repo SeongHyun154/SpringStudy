@@ -1,10 +1,10 @@
-#Spring Boot 파일 업로드 코드 설명
+# Spring Boot 파일 업로드 코드 설명
 
 이 코드는 Spring Boot와 간단한 HTML 인터페이스를 통해 단일 및 다중 파일 업로드와 DTO(Data Transfer Object)를 통한 메타데이터 전송 기능을 제공합니다. 각 구성 요소와 주요 기능을 아래에 정리했습니다.
 
 ---
 
-##1. 컨트롤러: `FileUpDownloadController`
+## 1. 컨트롤러: `FileUpDownloadController`
 
 Spring MVC `@Controller`로 파일 업로드를 처리하며, `/file` 경로로 매핑되어 있습니다. 이 컨트롤러에는 단일 파일, 다중 파일, DTO와 함께 다중 파일 업로드 기능이 포함되어 있습니다.
 
@@ -34,7 +34,6 @@ Spring MVC `@Controller`로 파일 업로드를 처리하며, `/file` 경로로 
 - **`upload_post_multi_dto()`**: DTO를 사용하여 메타데이터와 다중 파일 업로드를 처리합니다.
   - `FileDto` 객체로 파일 배열과 관련 데이터를 함께 캡처합니다.
   - `FileDto` 정보를 로그에 기록.
-
 ### 코드 예시
 ```java
 package com.example.ex01.controller;
@@ -129,7 +128,47 @@ public class FileUpDownloadController {
 - **`files`** (MultipartFile[]): 업로드된 파일의 배열.
 
 DTO를 통해 메타데이터(예: `category` 또는 `price`)와 파일을 함께 제출할 수 있어, 관련 정보를 포함한 업로드가 필요할 때 유용합니다.
+### 코드 예시
+```java
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
 
+	<h1>FILE UPLOAD</h1>
+	
+	<h2>단일 파일 전송 - 동기방식</h2>	
+	<form action="${pageContext.request.contextPath}/file/upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" />
+		<input type="submit" value="단일파일전송" />		
+	</form>
+	
+	<hr>
+	
+	<h2>다중 파일 전송 - 동기방식</h2>	
+	<form action="${pageContext.request.contextPath}/file/multiUpload" method="post" enctype="multipart/form-data">
+		<input type="file" name="files" multiple />
+		<input type="submit" value="다중파일전송"  />		
+	</form>
+	
+	<hr>
+	
+	<h2>다중 파일 전송(DTO) - 동기방식</h2>
+	<form action="${pageContext.request.contextPath}/file/multiUpload_dto" method="post" enctype="multipart/form-data">
+		<input type="text" name="id" />
+		<input type="text" name="category" />
+		<input type="text" name="price" />
+		<input type="file"  name="files" multiple/>
+		<input type="submit" value="단일파일전송" />
+ 	</form>	
+	
+</body>
+</html>
 ---
 
 ## 3. HTML 파일 업로드 폼
@@ -148,7 +187,25 @@ HTML 페이지는 파일 업로드를 위한 세 가지 섹션을 포함합니�
    - `/file/multiUpload_dto` 엔드포인트 사용.
    - `id`, `category`, `price` 필드를 입력할 수 있는 텍스트 필드로 추가 데이터 캡처.
    - 다중 파일 입력 필드로 DTO 필드와 함께 제출.
+### 코드 예시
+```java
+package com.example.ex01.domain.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class FileDto {
+	private int id;
+	private String category;
+	private int price;
+	MultipartFile [] files;
+}
 ---
 
 ## 전체 흐름 요약
