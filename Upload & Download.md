@@ -2,7 +2,8 @@
 
 이 코드는 Spring Boot와 간단한 HTML 인터페이스를 통해 단일 및 다중 파일 업로드와 DTO(Data Transfer Object)를 통한 메타데이터 전송 기능을 제공합니다. 
 
-<img src="![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/dafec3e9-a948-471d-be93-989bec4de061/893fb927-2767-4f04-8870-239461587610/image.png)">
+<img src="![upload](https://github.com/user-attachments/assets/d270502b-e154-450c-af51-de50f71df47f)
+">
 
 
 ---
