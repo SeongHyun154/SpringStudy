@@ -72,8 +72,8 @@ public class MyCustomEvent extends ApplicationEvent {
 }
 ```
 
-## 2. 이벤트 발행
-### ApplicationEventPublisher를 사용하여 이벤트를 발행.
+### 2. 이벤트 발행
+#### ApplicationEventPublisher를 사용하여 이벤트를 발행.
 ```java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
