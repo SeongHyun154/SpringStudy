@@ -31,3 +31,44 @@ public class MyEventListener implements ApplicationListener<MyCustomEvent> {
         System.out.println("이벤트 수신: " + event.getMessage());
     }
 }
+```
+
+### 2. @EventListener 어노테이션 사용
+```java
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyEventListener {
+
+    @EventListener
+    public void handleCustomEvent(MyCustomEvent event) {
+        System.out.println("이벤트 처리: " + event.getMessage());
+    }
+}
+
+```
+
+---
+
+## 이벤트 생성 및 발행
+
+### 1. 이벤트 클래스 정의
+
+```java
+import org.springframework.context.ApplicationEvent;
+
+public class MyCustomEvent extends ApplicationEvent {
+    private String message;
+
+    public MyCustomEvent(Object source, String message) {
+        super(source);
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+}
+
+
