@@ -129,7 +129,12 @@ public void handleAsyncEvent(MyCustomEvent event) {
 
 Spring Listener는 이벤트 기반 아키텍처를 활용한 **유연하고 모듈화된 시스템 설계**를 가능하게 합니다.
 
+---
+---
+---
+## 예시 코드
 
+- **Spring MVC 환경에서 다양한 설정을 구성하는 예제입니다. 주요 설정은 WebMvcConfig 클래스에서 이루어지며, Listener, Interceptor, HandlerMapping 등의 개념이 활용**
 
 
 
