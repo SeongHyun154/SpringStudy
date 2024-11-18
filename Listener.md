@@ -137,5 +137,54 @@ Spring Listener는 이벤트 기반 아키텍처를 활용한 **유연하고 모
 - **Spring MVC 환경에서 다양한 설정을 구성하는 예제입니다. 주요 설정은 WebMvcConfig 클래스에서 이루어지며, Listener, Interceptor, HandlerMapping 등의 개념이 활용**
 
 
+# WebMvcConfig 클래스
+
+이 클래스는 Spring MVC 설정을 담당하며 `@Configuration`과 `@EnableWebMvc`로 설정 클래스임을 명시합니다.
+
+---
+
+## 주요 설정 내용
+
+### 1.1 멀티파트 설정 (`multipartResolver`)
+파일 업로드 처리를 담당하는 설정입니다.
+
+- `setMaxUploadSize`: 전체 업로드 가능 용량을 설정. (20MB)
+- `setMaxUploadSizePerFile`: 파일 하나의 최대 업로드 용량. (20MB)
+- `setMaxInMemorySize`: 메모리에 보관할 데이터의 크기.
+
+---
+
+### 1.2 뷰 리졸버 설정 (`viewResolver`)
+JSP 뷰 파일을 찾기 위한 설정입니다.
+
+- `setPrefix`: JSP 파일이 위치하는 디렉터리 지정. (`/WEB-INF/views/`)
+- `setSuffix`: JSP 파일의 확장자 지정. (`.jsp`)
+
+---
+
+### 1.3 정적 리소스 핸들러 (`addResourceHandlers`)
+정적 자원(css, js, 이미지 등)의 경로를 설정합니다.
+
+- `"/resources/**"`로 요청이 들어오면 `/resources/` 경로에서 파일을 찾음.
+
+---
+
+### 1.4 인터셉터 설정 (`addInterceptors`)
+특정 URL 요청을 가로채서 사전 처리/후처리 로직을 추가합니다.
+
+- `MemoInterceptor`는 `/memo/*` 패턴에 대해 동작.
 
 
+### 2. Listener 등록
+- **Listener는 특정 이벤트가 발생했을 때 자동으로 실행되는 구성 요소입니다.**
+- 아래 세 가지 Listener가 등록
+#### 2.1 RequestHandledEventListener
+- Spring이 제공하는 RequestHandledEvent를 처리합니다.
+- HTTP 요청이 완료되었을 때 호출됩니다.
+
+```java
+@Override
+public void onApplicationEvent(RequestHandledEvent event) {
+    System.out.println("Request 처리 완료 이벤트: " + event.getSource());
+}
+```
