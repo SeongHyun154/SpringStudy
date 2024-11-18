@@ -44,9 +44,9 @@ Spring의 **@Scheduled**는 애플리케이션에서 작업을 일정한 간격�
 | `0 0 0 1 1 ?`     | 매년 1월 1일 0시 정각 실행 |
 
 
-#### 예시 코드
----
 
+---
+#### 예시 코드
 ```java
 package com.example.ex01.scheduled;
 
