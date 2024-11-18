@@ -1,4 +1,4 @@
-# Spring Scheduled
+# :pencil2: Spring Scheduled
 
 Spring의 **@Scheduled**는 애플리케이션에서 작업을 일정한 간격으로 실행하거나 특정 시간에 실행하도록 예약할 수 있는 기능을 제공합니다. 이 기능은 **Spring Task Scheduling** 모듈을 기반으로 구현됩니다.
 
