@@ -1,4 +1,4 @@
-# Spring Listener
+# :pencil2: Spring Listener
 
 Spring Listener는 **Spring Framework**에서 특정 이벤트(Event)가 발생했을 때 이를 감지하고 처리하기 위해 사용하는 컴포넌트입니다. 주로 이벤트 기반 아키텍처에서 활용되며, 애플리케이션 내 이벤트 처리와 외부 시스템 상호작용에 유용합니다.
 
