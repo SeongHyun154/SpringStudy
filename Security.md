@@ -4,6 +4,12 @@
 **Spring Security**는 스프링 기반 애플리케이션의 **인증(Authentication)과 인가(Authorization)를 담당**하는 강력한 보안 프레임워크입니다. <br>
 웹 애플리케이션 및 API의 보안 요구사항을 쉽게 구현할 수 있도록 지원합니다.
 
+![image](https://github.com/user-attachments/assets/823030f7-b986-43f3-bb5f-8fc271ef0222)
+---
+![image](https://github.com/user-attachments/assets/32aeb40b-456e-4cee-a205-4d85e6ebd0be)
+
+
+
 ---
 
 ## 2. 주요 기능
