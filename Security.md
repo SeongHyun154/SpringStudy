@@ -5,6 +5,8 @@
 웹 애플리케이션 및 API의 보안 요구사항을 쉽게 구현할 수 있도록 지원합니다.
 
 ![image](https://github.com/user-attachments/assets/823030f7-b986-43f3-bb5f-8fc271ef0222)
+![image](https://github.com/user-attachments/assets/2ae5a824-84eb-4b45-888e-c8e46bc51502)
+
 ---
 ![image](https://github.com/user-attachments/assets/32aeb40b-456e-4cee-a205-4d85e6ebd0be)
 
