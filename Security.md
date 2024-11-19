@@ -1,7 +1,8 @@
 # :pencil2: Spring Security
 
 ## 1. 정의
-**Spring Security**는 스프링 기반 애플리케이션의 **인증(Authentication)**과 **인가(Authorization)**를 담당하는 강력한 보안 프레임워크입니다. 웹 애플리케이션 및 API의 보안 요구사항을 쉽게 구현할 수 있도록 지원합니다.
+**Spring Security**는 스프링 기반 애플리케이션의 **인증(Authentication)과 인가(Authorization)를 담당**하는 강력한 보안 프레임워크입니다. <br>
+웹 애플리케이션 및 API의 보안 요구사항을 쉽게 구현할 수 있도록 지원합니다.
 
 ---
 
